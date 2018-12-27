@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		16C020D3AD4C7C75760E23F5 /* libPods-Academia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85FCE4057022ED70F936F34A /* libPods-Academia.a */; };
+		FD8F3FE921D0FD16000F1BB5 /* LibgenSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8F3FE821D0FD16000F1BB5 /* LibgenSearchTableViewController.m */; };
 		FDBDDE2221C745D8005C8C2A /* Publication.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBDDE2121C745D8005C8C2A /* Publication.m */; };
 		FDBDDE2821C74C50005C8C2A /* Libgen.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBDDE2721C74C50005C8C2A /* Libgen.m */; };
 		FDC90DE821C4D9F0006BE7C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC90DE721C4D9F0006BE7C0 /* AppDelegate.m */; };
-		FDC90DEB21C4D9F1006BE7C0 /* LibgenSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC90DEA21C4D9F1006BE7C0 /* LibgenSearchViewController.m */; };
 		FDC90DEE21C4D9F1006BE7C0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC90DED21C4D9F1006BE7C0 /* SecondViewController.m */; };
 		FDC90DF121C4D9F1006BE7C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC90DEF21C4D9F1006BE7C0 /* Main.storyboard */; };
 		FDC90DF321C4D9F2006BE7C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDC90DF221C4D9F2006BE7C0 /* Assets.xcassets */; };
@@ -23,6 +23,8 @@
 		5075476FDBB5E2A7BBA9A5CD /* Pods-Academia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Academia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Academia/Pods-Academia.release.xcconfig"; sourceTree = "<group>"; };
 		85FCE4057022ED70F936F34A /* libPods-Academia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Academia.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F477BB273E5E8131ECDAD2F5 /* Pods-Academia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Academia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Academia/Pods-Academia.debug.xcconfig"; sourceTree = "<group>"; };
+		FD8F3FE721D0FD16000F1BB5 /* LibgenSearchTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LibgenSearchTableViewController.h; sourceTree = "<group>"; };
+		FD8F3FE821D0FD16000F1BB5 /* LibgenSearchTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibgenSearchTableViewController.m; sourceTree = "<group>"; };
 		FDBDDE2021C745D8005C8C2A /* Publication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Publication.h; sourceTree = "<group>"; };
 		FDBDDE2121C745D8005C8C2A /* Publication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Publication.m; sourceTree = "<group>"; };
 		FDBDDE2621C74C50005C8C2A /* Libgen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Libgen.h; sourceTree = "<group>"; };
@@ -30,8 +32,6 @@
 		FDC90DE321C4D9F0006BE7C0 /* Academia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Academia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC90DE621C4D9F0006BE7C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FDC90DE721C4D9F0006BE7C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FDC90DE921C4D9F1006BE7C0 /* LibgenSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LibgenSearchViewController.h; sourceTree = "<group>"; };
-		FDC90DEA21C4D9F1006BE7C0 /* LibgenSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibgenSearchViewController.m; sourceTree = "<group>"; };
 		FDC90DEC21C4D9F1006BE7C0 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		FDC90DED21C4D9F1006BE7C0 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		FDC90DF021C4D9F1006BE7C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,8 +82,8 @@
 		FDBDDE2421C745E6005C8C2A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FDC90DE921C4D9F1006BE7C0 /* LibgenSearchViewController.h */,
-				FDC90DEA21C4D9F1006BE7C0 /* LibgenSearchViewController.m */,
+				FD8F3FE721D0FD16000F1BB5 /* LibgenSearchTableViewController.h */,
+				FD8F3FE821D0FD16000F1BB5 /* LibgenSearchTableViewController.m */,
 				FDC90DEC21C4D9F1006BE7C0 /* SecondViewController.h */,
 				FDC90DED21C4D9F1006BE7C0 /* SecondViewController.m */,
 			);
@@ -228,9 +228,9 @@
 			files = (
 				FDC90DEE21C4D9F1006BE7C0 /* SecondViewController.m in Sources */,
 				FDC90DE821C4D9F0006BE7C0 /* AppDelegate.m in Sources */,
+				FD8F3FE921D0FD16000F1BB5 /* LibgenSearchTableViewController.m in Sources */,
 				FDBDDE2821C74C50005C8C2A /* Libgen.m in Sources */,
 				FDC90DF921C4D9F2006BE7C0 /* main.m in Sources */,
-				FDC90DEB21C4D9F1006BE7C0 /* LibgenSearchViewController.m in Sources */,
 				FDBDDE2221C745D8005C8C2A /* Publication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

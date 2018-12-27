@@ -106,15 +106,8 @@ NSArray/*<Publication *>*/ * __nullable SearchForPublications(NSString *keywords
     }];
     NSLog(@"%@", ids);
     
-//    NSString *errStr;
-//    NSArray *res = GetPublicationDetails(ids, &errStr);
-//    if (errStr) {
-//        *error = errStr;
-//        return nil;
-//    }
-    
 #define MAX_IDS_PER_REQUEST 20
-    int length    = ids.count,
+    int length    = (int) ids.count,
         round     = length / MAX_IDS_PER_REQUEST,
         remainder = length - (round * MAX_IDS_PER_REQUEST);
     NSMutableArray *res = [[NSMutableArray alloc] init];

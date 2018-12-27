@@ -10,22 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Libgen Search View Controller-->
-        <scene sceneID="hNz-n2-bh7">
-            <objects>
-                <viewController id="9pv-A4-QxB" customClass="LibgenSearchViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="FPa-Ej-ACK"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1464.3884892086332" y="-320.14388489208636"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="mRK-tQ-7jr">
             <objects>
@@ -40,6 +24,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3M-it-fpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1464" y="1034"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aSg-3f-m12">
+            <objects>
+                <viewController id="UWH-UU-xhn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dL9-4F-Rmb">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LTt-4W-u79"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VlR-21-rEV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2129" y="-312"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="cTR-r4-IAt">
@@ -70,12 +69,88 @@
             </objects>
             <point key="canvasLocation" x="2181" y="383"/>
         </scene>
+        <!--LibGen Search-->
+        <scene sceneID="cgE-GV-O1f">
+            <objects>
+                <tableViewController id="ByR-x7-kJ6" customClass="LibgenSearchTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mo6-Em-FFF">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="mpk-eF-74A">
+                            <rect key="frame" x="0.0" y="0.0" width="1112" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type keywords here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5lc-A1-6ln">
+                                    <rect key="frame" x="16" y="6" width="1004" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDE-x0-Va6">
+                                    <rect key="frame" x="1036" y="7" width="60" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="rDE-x0-Va6" secondAttribute="height" multiplier="2:1" id="eew-Cp-EHg"/>
+                                    </constraints>
+                                    <state key="normal" title="Search"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="5lc-A1-6ln" firstAttribute="top" secondItem="mpk-eF-74A" secondAttribute="top" constant="6" id="0ps-pL-ROg"/>
+                                <constraint firstItem="5lc-A1-6ln" firstAttribute="leading" secondItem="mpk-eF-74A" secondAttribute="leading" constant="16" id="6g6-iH-FEA"/>
+                                <constraint firstItem="5lc-A1-6ln" firstAttribute="height" secondItem="rDE-x0-Va6" secondAttribute="height" id="FhC-wt-p4K"/>
+                                <constraint firstAttribute="trailing" secondItem="rDE-x0-Va6" secondAttribute="trailing" constant="16" id="RNn-Mk-yU1"/>
+                                <constraint firstItem="rDE-x0-Va6" firstAttribute="centerY" secondItem="mpk-eF-74A" secondAttribute="centerY" id="hej-Cc-fLc"/>
+                                <constraint firstItem="rDE-x0-Va6" firstAttribute="leading" secondItem="5lc-A1-6ln" secondAttribute="trailing" constant="16" id="sdZ-MF-6b4"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LibgenSearchCell" textLabel="OZB-pn-iCn" detailTextLabel="gM8-Sq-mrP" style="IBUITableViewCellStyleSubtitle" id="ufT-Eo-ptD">
+                                <rect key="frame" x="0.0" y="72" width="1112" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="LibgenSearchPrototypeCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ufT-Eo-ptD" id="QaK-AM-sB5">
+                                    <rect key="frame" x="0.0" y="0.0" width="1074" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OZB-pn-iCn">
+                                            <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gM8-Sq-mrP">
+                                            <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ByR-x7-kJ6" id="EPK-MY-7Ii"/>
+                            <outlet property="delegate" destination="ByR-x7-kJ6" id="Xez-NV-jOz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="LibGen Search" id="Vr7-25-hoK"/>
+                    <connections>
+                        <segue destination="UWH-UU-xhn" kind="show" identifier="ShowPublicationDetailSegue" id="qjt-0R-4og"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHH-YP-bc1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1415.8273381294964" y="-320.14388489208636"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="gbU-TV-pV8">
             <objects>
                 <navigationController id="xW6-MG-bIM" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FwP-ki-imW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -130,7 +205,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="GQf-Mx-Cuv"/>
+                        <segue destination="ByR-x7-kJ6" kind="relationship" relationship="rootViewController" id="4PL-L5-3rt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgo-Rs-3iI" userLabel="First Responder" sceneMemberID="firstResponder"/>
