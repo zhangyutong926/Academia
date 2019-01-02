@@ -104,7 +104,6 @@ NSArray/*<Publication *>*/ * __nullable SearchForPublications(NSString *keywords
             return (NSComparisonResult)NSOrderedDescending;
         return (NSComparisonResult)NSOrderedSame;
     }];
-    NSLog(@"%@", ids);
     
 #define MAX_IDS_PER_REQUEST 20
     int length    = (int) ids.count,

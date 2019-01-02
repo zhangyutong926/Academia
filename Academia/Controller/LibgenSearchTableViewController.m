@@ -13,6 +13,8 @@
 @interface LibgenSearchTableViewController ()
 @property (nonatomic, readonly) NSMutableArray/*<Publication *>*/ *pubs;
 @property (nonatomic) int selectedPublicationIndex;
+- (IBAction)searchButtonPressed;
+@property (weak, nonatomic) IBOutlet UITextField *keywordTextview;
 @end
 
 @implementation LibgenSearchTableViewController
@@ -72,14 +74,47 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.selectedPublicationIndex = indexPath.row;
-    [self performSegueWithIdentifier:@"ShowPublicationDetailSegue" sender:self];
+- (void)searchButtonPressed {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Searching..." preferredStyle:UIAlertControllerStyleAlert];
+    alert.view.tintColor = UIColor.blackColor;
+    UIActivityIndicatorView *loadingIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(10, 5, 50, 50)];
+    loadingIndicator.hidesWhenStopped = YES;
+    loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    [loadingIndicator startAnimating];
+    [alert.view addSubview:loadingIndicator];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    NSString *keywords = self.keywordTextview.text;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        NSString *searchKeyword = [keywords stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+        NSString *error;
+        NSArray *pubs = SearchForPublications(searchKeyword, &error);
+        if (error != nil && ![error isEqualToString:@""]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [alert dismissViewControllerAnimated:YES completion:nil];
+                [[[UIAlertView alloc] initWithTitle:@"Error During Search" message:error delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
+            });
+            return;
+        }
+        
+        [self.pubs removeAllObjects];
+        [self.pubs addObjectsFromArray:pubs];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alert dismissViewControllerAnimated:YES completion:nil];
+            [self.tableView reloadData];
+        });
+    });
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    self.selectedPublicationIndex = indexPath.row;
+//    [self performSegueWithIdentifier:@"ShowPublicationDetailSegue" sender:self];
+//}
+//
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//
+//}
 
 /*
 // Override to support conditional editing of the table view.

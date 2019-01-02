@@ -93,6 +93,9 @@
                                         <constraint firstAttribute="width" secondItem="rDE-x0-Va6" secondAttribute="height" multiplier="2:1" id="eew-Cp-EHg"/>
                                     </constraints>
                                     <state key="normal" title="Search"/>
+                                    <connections>
+                                        <action selector="searchButtonPressed" destination="ByR-x7-kJ6" eventType="touchUpInside" id="ycn-ka-Lmc"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,6 +141,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="LibGen Search" id="Vr7-25-hoK"/>
                     <connections>
+                        <outlet property="keywordTextview" destination="5lc-A1-6ln" id="eRo-2X-FW5"/>
                         <segue destination="UWH-UU-xhn" kind="show" identifier="ShowPublicationDetailSegue" id="qjt-0R-4og"/>
                     </connections>
                 </tableViewController>
